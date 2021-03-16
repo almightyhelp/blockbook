@@ -3,8 +3,8 @@ package snowgem
 import (
 	"encoding/json"
 
-	"almightyhelp/blockbook/blockbook/bchain"
-	"almightyhelp/blockbook/blockbook/bchain/coins/btc"
+	"almightyhelp/blockbook/bchain"
+	"almightyhelp/blockbook/bchain/coins/btc"
 
 	"github.com/golang/glog"
 	"github.com/juju/errors"

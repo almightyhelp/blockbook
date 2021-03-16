@@ -12,7 +12,7 @@ import (
 
 	"github.com/golang/glog"
 	"github.com/juju/errors"
-	"almightyhelp/blockbook/blockbook/bchain"
+	"almightyhelp/blockbook/bchain"
 )
 
 // https://whatthefee.io returns

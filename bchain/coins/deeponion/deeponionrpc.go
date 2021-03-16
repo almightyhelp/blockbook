@@ -5,8 +5,8 @@ import (
 
 	"github.com/golang/glog"
 	"github.com/juju/errors"
-	"almightyhelp/blockbook/blockbook/bchain"
-	"almightyhelp/blockbook/blockbook/bchain/coins/btc"
+	"almightyhelp/blockbook/bchain"
+	"almightyhelp/blockbook/bchain/coins/btc"
 )
 
 // DeepOnionRPC is an interface to JSON-RPC bitcoind service.

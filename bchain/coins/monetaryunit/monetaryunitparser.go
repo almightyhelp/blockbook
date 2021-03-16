@@ -9,9 +9,9 @@ import (
 	"github.com/juju/errors"
 	"github.com/martinboehm/btcd/wire"
 	"github.com/martinboehm/btcutil/chaincfg"
-	"almightyhelp/blockbook/blockbook/bchain"
-	"almightyhelp/blockbook/blockbook/bchain/coins/btc"
-	"almightyhelp/blockbook/blockbook/bchain/coins/utils"
+	"almightyhelp/blockbook/bchain"
+	"almightyhelp/blockbook/bchain/coins/btc"
+	"almightyhelp/blockbook/bchain/coins/utils"
 )
 
 const (

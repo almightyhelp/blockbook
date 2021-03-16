@@ -9,8 +9,8 @@ import (
 	"strings"
 	"testing"
 
-	"almightyhelp/blockbook/blockbook/bchain"
-	"almightyhelp/blockbook/blockbook/db"
+	"almightyhelp/blockbook/bchain"
+	"almightyhelp/blockbook/db"
 )
 
 func testConnectBlocks(t *testing.T, h *TestHandler) {

@@ -13,10 +13,10 @@ import (
 	"github.com/juju/errors"
 	gosocketio "github.com/martinboehm/golang-socketio"
 	"github.com/martinboehm/golang-socketio/transport"
-	"almightyhelp/blockbook/blockbook/api"
-	"almightyhelp/blockbook/blockbook/bchain"
-	"almightyhelp/blockbook/blockbook/common"
-	"almightyhelp/blockbook/blockbook/db"
+	"almightyhelp/blockbook/api"
+	"almightyhelp/blockbook/bchain"
+	"almightyhelp/blockbook/common"
+	"almightyhelp/blockbook/db"
 )
 
 // SocketIoServer is handle to SocketIoServer

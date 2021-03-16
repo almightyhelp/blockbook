@@ -3,7 +3,7 @@ package monacoin
 import (
 	"github.com/martinboehm/btcd/wire"
 	"github.com/martinboehm/btcutil/chaincfg"
-	"almightyhelp/blockbook/blockbook/bchain/coins/btc"
+	"almightyhelp/blockbook/bchain/coins/btc"
 )
 
 // magic numbers

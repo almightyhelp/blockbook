@@ -8,8 +8,8 @@ import (
 	"github.com/golang/glog"
 	"github.com/juju/errors"
 	"github.com/tecbot/gorocksdb"
-	"almightyhelp/blockbook/blockbook/bchain"
-	"almightyhelp/blockbook/blockbook/bchain/coins/eth"
+	"almightyhelp/blockbook/bchain"
+	"almightyhelp/blockbook/bchain/coins/eth"
 )
 
 // AddrContract is Contract address with number of transactions done by given address

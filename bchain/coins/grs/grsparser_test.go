@@ -11,8 +11,8 @@ import (
 	"testing"
 
 	"github.com/martinboehm/btcutil/chaincfg"
-	"almightyhelp/blockbook/blockbook/bchain"
-	"almightyhelp/blockbook/blockbook/bchain/coins/btc"
+	"almightyhelp/blockbook/bchain"
+	"almightyhelp/blockbook/bchain/coins/btc"
 )
 
 var (

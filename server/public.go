@@ -18,10 +18,10 @@ import (
 	"time"
 
 	"github.com/golang/glog"
-	"almightyhelp/blockbook/blockbook/api"
-	"almightyhelp/blockbook/blockbook/bchain"
-	"almightyhelp/blockbook/blockbook/common"
-	"almightyhelp/blockbook/blockbook/db"
+	"almightyhelp/blockbook/api"
+	"almightyhelp/blockbook/bchain"
+	"almightyhelp/blockbook/common"
+	"almightyhelp/blockbook/db"
 )
 
 const txsOnPage = 25

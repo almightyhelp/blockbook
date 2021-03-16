@@ -16,8 +16,8 @@ import (
 	"github.com/golang/glog"
 	"github.com/juju/errors"
 	"github.com/martinboehm/btcd/wire"
-	"almightyhelp/blockbook/blockbook/bchain"
-	"almightyhelp/blockbook/blockbook/common"
+	"almightyhelp/blockbook/bchain"
+	"almightyhelp/blockbook/common"
 )
 
 // BitcoinRPC is an interface to JSON-RPC bitcoind service.

@@ -17,8 +17,8 @@ import (
 	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/golang/glog"
 	"github.com/juju/errors"
-	"almightyhelp/blockbook/blockbook/bchain"
-	"almightyhelp/blockbook/blockbook/common"
+	"almightyhelp/blockbook/bchain"
+	"almightyhelp/blockbook/common"
 )
 
 // EthereumNet type specifies the type of ethereum network

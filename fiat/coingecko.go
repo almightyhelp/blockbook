@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/golang/glog"
-	"almightyhelp/blockbook/blockbook/db"
+	"almightyhelp/blockbook/db"
 )
 
 // Coingecko is a structure that implements RatesDownloaderInterface

@@ -6,7 +6,7 @@ import (
 	"errors"
 	"math/big"
 
-	"almightyhelp/blockbook/blockbook/bchain"
+	"almightyhelp/blockbook/bchain"
 )
 
 type fakeBlockChain struct {

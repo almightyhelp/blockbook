@@ -2,8 +2,8 @@ SHELL = /bin/bash
 VERSION ?= devel
 GITCOMMIT = $(shell cd /src && git describe --always --dirty)
 BUILDTIME = $(shell date --iso-8601=seconds)
-LDFLAGS := -X almightyhelp/blockbook/blockbook/common.version=$(VERSION) -X almightyhelp/blockbook/blockbook/common.gitcommit=$(GITCOMMIT) -X almightyhelp/blockbook/blockbook/common.buildtime=$(BUILDTIME)
-BLOCKBOOK_BASE := $(GOPATH)/src/almightyhelp/blockbook
+LDFLAGS := -X almightyhelp/blockbook/common.version=$(VERSION) -X almightyhelp/blockbook/common.gitcommit=$(GITCOMMIT) -X almightyhelp/blockbook/common.buildtime=$(BUILDTIME)
+BLOCKBOOK_BASE := $(GOPATH)/src/almightyhelp
 BLOCKBOOK_SRC := $(BLOCKBOOK_BASE)/blockbook
 ARGS ?=
 
@@ -24,13 +24,13 @@ tools:
 	chown $(PACKAGER) /out/{ldb,sst_dump}
 
 test: prepare-sources generate-data
-	cd $(BLOCKBOOK_SRC) && go test -tags unittest `go list ./... | grep -vP '^almightyhelp/blockbook/blockbook/(contrib|tests)'` $(ARGS)
+	cd $(BLOCKBOOK_SRC) && go test -tags unittest `go list ./... | grep -vP '^almightyhelp/blockbook/(contrib|tests)'` $(ARGS)
 
 test-integration: prepare-sources generate-data
-	cd $(BLOCKBOOK_SRC) && go test -tags integration `go list almightyhelp/blockbook/blockbook/tests/...` $(ARGS)
+	cd $(BLOCKBOOK_SRC) && go test -tags integration `go list almightyhelp/blockbook/tests/...` $(ARGS)
 
 test-all: prepare-sources generate-data
-	cd $(BLOCKBOOK_SRC) && go test -tags 'unittest integration' `go list ./... | grep -v '^almightyhelp/blockbook/blockbook/contrib'` $(ARGS)
+	cd $(BLOCKBOOK_SRC) && go test -tags 'unittest integration' `go list ./... | grep -v '^almightyhelp/blockbook/contrib'` $(ARGS)
 
 prepare-sources:
 	@ [ -n "`ls /src 2> /dev/null`" ] || (echo "/src doesn't exist or is empty" 1>&2 && exit 1)

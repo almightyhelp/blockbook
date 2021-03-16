@@ -10,9 +10,9 @@ import (
 	"path/filepath"
 	"testing"
 
-	"almightyhelp/blockbook/blockbook/bchain"
-	"almightyhelp/blockbook/blockbook/common"
-	"almightyhelp/blockbook/blockbook/db"
+	"almightyhelp/blockbook/bchain"
+	"almightyhelp/blockbook/common"
+	"almightyhelp/blockbook/db"
 )
 
 var testMap = map[string]func(t *testing.T, th *TestHandler){

@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"almightyhelp/blockbook/blockbook/bchain"
-	"almightyhelp/blockbook/blockbook/tests/dbtestdata"
+	"almightyhelp/blockbook/bchain"
+	"almightyhelp/blockbook/tests/dbtestdata"
 )
 
 func TestErc20_erc20GetTransfersFromLog(t *testing.T) {
