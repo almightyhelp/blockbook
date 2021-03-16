@@ -5,7 +5,7 @@ import (
 
 	"github.com/golang/glog"
 	"github.com/almightyhelp/blockbook/bchain"
-	"github.com/github.com/almightyhelp/blockbook/bchain/coins/btc"
+	"github.com/almightyhelp/blockbook/bchain/coins/btc"
 )
 
 // BellcoinRPC is an interface to JSON-RPC bitcoind service.
