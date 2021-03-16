@@ -1,4 +1,4 @@
-module github.com/trezor/blockbook
+module github.com/almightyhelp/blockbook
 
 go 1.15
 
@@ -40,6 +40,7 @@ require (
 	github.com/rs/cors v1.7.0 // indirect
 	github.com/schancel/cashaddr-converter v0.0.0-20181111022653-4769e7add95a
 	github.com/tecbot/gorocksdb v0.0.0-20191217155057-f0fad39f321c
+	github.com/almightyhelp/blockbook v0.3.4
 	golang.org/x/crypto v0.0.0-20201112155050-0c6587e931a9
 	gopkg.in/check.v1 v1.0.0-20200227125254-8fa46927fb4f // indirect
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22 // indirect

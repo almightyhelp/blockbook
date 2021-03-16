@@ -10,55 +10,54 @@ import (
 	"time"
 
 	"github.com/juju/errors"
-	"github.com/trezor/blockbook/bchain"
-	
-"github.com/trezor/blockbook/bchain/coins/bch"
-	"github.com/trezor/blockbook/bchain/coins/bellcoin"
-	"github.com/trezor/blockbook/bchain/coins/bitcore"
-	"github.com/trezor/blockbook/bchain/coins/bitzeny"
-  "github.com/trezor/blockbook/bchain/coins/btc"
-	"github.com/trezor/blockbook/bchain/coins/btg"
-	"github.com/trezor/blockbook/bchain/coins/cpuchain"
-	"github.com/trezor/blockbook/bchain/coins/dash"
-	"github.com/trezor/blockbook/bchain/coins/dcr"
-	"github.com/trezor/blockbook/bchain/coins/deeponion"
-	"github.com/trezor/blockbook/bchain/coins/digibyte"
-	"github.com/trezor/blockbook/bchain/coins/divi"
-	"github.com/trezor/blockbook/bchain/coins/dogecoin"
-	"github.com/trezor/blockbook/bchain/coins/eth"
-	"github.com/trezor/blockbook/bchain/coins/firo"
-	"github.com/trezor/blockbook/bchain/coins/flo"
-	"github.com/trezor/blockbook/bchain/coins/fujicoin"
-	"github.com/trezor/blockbook/bchain/coins/gamecredits"
-	"github.com/trezor/blockbook/bchain/coins/grs"
-	"github.com/trezor/blockbook/bchain/coins/koto"
-	"github.com/trezor/blockbook/bchain/coins/liquid"
-	"github.com/trezor/blockbook/bchain/coins/litecoin"
-	"github.com/trezor/blockbook/bchain/coins/monacoin"
-	"github.com/trezor/blockbook/bchain/coins/monetaryunit"
-	"github.com/trezor/blockbook/bchain/coins/myriad"
-	"github.com/trezor/blockbook/bchain/coins/namecoin"
-	"github.com/trezor/blockbook/bchain/coins/nuls"
-	"github.com/trezor/blockbook/bchain/coins/omotenashicoin"
-	 "github.com/trezor/blockbook/bchain/coins/pivx"
-	 "github.com/almightyhelp/blockbook/tree/master/bchain/coins/rainbitcoin"
-	"github.com/trezor/blockbook/bchain/coins/polis"
-	"github.com/trezor/blockbook/bchain/coins/qtum"
-	"github.com/trezor/blockbook/bchain/coins/ravencoin"
-	"github.com/trezor/blockbook/bchain/coins/ritocoin"
-	"github.com/trezor/blockbook/bchain/coins/snowgem"
-	"github.com/trezor/blockbook/bchain/coins/trezarcoin"
-	"github.com/trezor/blockbook/bchain/coins/unobtanium"
-	"github.com/trezor/blockbook/bchain/coins/vertcoin"
-	"github.com/trezor/blockbook/bchain/coins/viacoin"
-	"github.com/trezor/blockbook/bchain/coins/vipstarcoin"
-	"github.com/trezor/blockbook/bchain/coins/zec"
-	"github.com/trezor/blockbook/common"
+	"github.com/almightyhelp/blockbook/bchain"
+	"github.com/almightyhelp/blockbook/bchain/coins/bch"
+	"github.com/almightyhelp/blockbook/bchain/coins/bellcoin"
+	"github.com/almightyhelp/blockbook/bchain/coins/bitcore"
+	"github.com/almightyhelp/blockbook/bchain/coins/bitzeny"
+	"github.com/almightyhelp/blockbook/bchain/coins/btc"
+	"github.com/almightyhelp/blockbook/bchain/coins/btg"
+	"github.com/almightyhelp/blockbook/bchain/coins/cpuchain"
+	"github.com/almightyhelp/blockbook/bchain/coins/dash"
+	"github.com/almightyhelp/blockbook/bchain/coins/dcr"
+	"github.com/almightyhelp/blockbook/bchain/coins/deeponion"
+	"github.com/almightyhelp/blockbook/bchain/coins/digibyte"
+	"github.com/almightyhelp/blockbook/bchain/coins/divi"
+	"github.com/almightyhelp/blockbook/bchain/coins/dogecoin"
+	"github.com/almightyhelp/blockbook/bchain/coins/eth"
+	"github.com/almightyhelp/blockbook/bchain/coins/firo"
+	"github.com/almightyhelp/blockbook/bchain/coins/flo"
+	"github.com/almightyhelp/blockbook/bchain/coins/fujicoin"
+	"github.com/almightyhelp/blockbook/bchain/coins/gamecredits"
+	"github.com/almightyhelp/blockbook/bchain/coins/grs"
+	"github.com/almightyhelp/blockbook/bchain/coins/koto"
+	"github.com/almightyhelp/blockbook/bchain/coins/liquid"
+	"github.com/almightyhelp/blockbook/bchain/coins/litecoin"
+	"github.com/almightyhelp/blockbook/bchain/coins/monacoin"
+	"github.com/almightyhelp/blockbook/bchain/coins/monetaryunit"
+	"github.com/almightyhelp/blockbook/bchain/coins/myriad"
+	"github.com/almightyhelp/blockbook/bchain/coins/namecoin"
+	"github.com/almightyhelp/blockbook/bchain/coins/nuls"
+	"github.com/almightyhelp/blockbook/bchain/coins/omotenashicoin"
+	"github.com/almightyhelp/blockbook/bchain/coins/pivx"
+	"github.com/almightyhelp/blockbook/bchain/coins/rainbitcoin"
+	"github.com/almightyhelp/blockbook/bchain/coins/polis"
+	"github.com/almightyhelp/blockbook/bchain/coins/qtum"
+	"github.com/almightyhelp/blockbook/bchain/coins/ravencoin"
+	"github.com/almightyhelp/blockbook/bchain/coins/ritocoin"
+	"github.com/almightyhelp/blockbook/bchain/coins/snowgem"
+	"github.com/almightyhelp/blockbook/bchain/coins/trezarcoin"
+	"github.com/almightyhelp/blockbook/bchain/coins/unobtanium"
+	"github.com/almightyhelp/blockbook/bchain/coins/vertcoin"
+	"github.com/almightyhelp/blockbook/bchain/coins/viacoin"
+	"github.com/almightyhelp/blockbook/bchain/coins/vipstarcoin"
+	"github.com/almightyhelp/blockbook/bchain/coins/zec"
+	"github.com/almightyhelp/blockbook/common"
 )
 
 type blockChainFactory func(config json.RawMessage, pushHandler func(bchain.NotificationType)) (bchain.BlockChain, error)
 
-// BlockChainFactories is a map of constructors of coin RPC interfaces
+BlockChainFactories is a map of constructors of coin RPC interfaces
 var BlockChainFactories = make(map[string]blockChainFactory)
 
 func init() {
@@ -97,32 +96,32 @@ func init() {
 	BlockChainFactories["Liquid"] = liquid.NewLiquidRPC
 	BlockChainFactories["Groestlcoin"] = grs.NewGroestlcoinRPC
 	BlockChainFactories["Groestlcoin Testnet"] = grs.NewGroestlcoinRPC
-  BlockChainFactories["PIVX"] = pivx.NewPivXRPC
-  BlockChainFactories["Rainbitcoin"] = rainbitcoin.NewrainbitcoinRPC
- BlockChainFactories["PIVX Testnet"] = pivx.NewPivXRPC
- BlockChainFactories["Polis"] = polis.NewPolisRPC
- BlockChainFactories["Firo"] = firo.NewFiroRPC
- BlockChainFactories["Fujicoin"] = fujicoin.NewFujicoinRPC
- BlockChainFactories["Flo"] = flo.NewFloRPC
- BlockChainFactories["Bellcoin"] = bellcoin.NewBellcoinRPC
- BlockChainFactories["Qtum"] = qtum.NewQtumRPC
- BlockChainFactories["Viacoin"] = viacoin.NewViacoinRPC
- BlockChainFactories["Qtum Testnet"] = qtum.NewQtumRPC
- BlockChainFactories["NULS"] = nuls.NewNulsRPC
- BlockChainFactories["VIPSTARCOIN"] = vipstarcoin.NewVIPSTARCOINRPC
- BlockChainFactories["ZelCash"] = zec.NewZCashRPC
- BlockChainFactories["Ravencoin"] = ravencoin.NewRavencoinRPC
- BlockChainFactories["Ritocoin"] = ritocoin.NewRitocoinRPC
- BlockChainFactories["Divi"] = divi.NewDiviRPC
- BlockChainFactories["CPUchain"] = cpuchain.NewCPUchainRPC
- BlockChainFactories["Unobtanium"] = unobtanium.NewUnobtaniumRPC
- BlockChainFactories["DeepOnion"] = deeponion.NewDeepOnionRPC
- BlockChainFactories["SnowGem"] = snowgem.NewSnowGemRPC
- BlockChainFactories["Bitcore"] = bitcore.NewBitcoreRPC
- BlockChainFactories["Omotenashicoin"] = omotenashicoin.NewOmotenashiCoinRPC
- BlockChainFactories["Omotenashicoin Testnet"] = omotenashicoin.NewOmotenashiCoinRPC
- BlockChainFactories["BitZeny"] = bitzeny.NewBitZenyRPC
- BlockChainFactories["Trezarcoin"] = trezarcoin.NewTrezarcoinRPC
+	BlockChainFactories["PIVX"] = pivx.NewPivXRPC
+	BlockChainFactories["Rainbitcoin"] = rainbitcoin.NewrainbitcoinRPC
+	BlockChainFactories["PIVX Testnet"] = pivx.NewPivXRPC
+	BlockChainFactories["Polis"] = polis.NewPolisRPC
+	BlockChainFactories["Firo"] = firo.NewFiroRPC
+	BlockChainFactories["Fujicoin"] = fujicoin.NewFujicoinRPC
+	BlockChainFactories["Flo"] = flo.NewFloRPC
+	BlockChainFactories["Bellcoin"] = bellcoin.NewBellcoinRPC
+	BlockChainFactories["Qtum"] = qtum.NewQtumRPC
+	BlockChainFactories["Viacoin"] = viacoin.NewViacoinRPC
+	BlockChainFactories["Qtum Testnet"] = qtum.NewQtumRPC
+	BlockChainFactories["NULS"] = nuls.NewNulsRPC
+	BlockChainFactories["VIPSTARCOIN"] = vipstarcoin.NewVIPSTARCOINRPC
+	BlockChainFactories["ZelCash"] = zec.NewZCashRPC
+	BlockChainFactories["Ravencoin"] = ravencoin.NewRavencoinRPC
+	BlockChainFactories["Ritocoin"] = ritocoin.NewRitocoinRPC
+	BlockChainFactories["Divi"] = divi.NewDiviRPC
+	BlockChainFactories["CPUchain"] = cpuchain.NewCPUchainRPC
+	BlockChainFactories["Unobtanium"] = unobtanium.NewUnobtaniumRPC
+	BlockChainFactories["DeepOnion"] = deeponion.NewDeepOnionRPC
+	BlockChainFactories["SnowGem"] = snowgem.NewSnowGemRPC
+	BlockChainFactories["Bitcore"] = bitcore.NewBitcoreRPC
+	BlockChainFactories["Omotenashicoin"] = omotenashicoin.NewOmotenashiCoinRPC
+	BlockChainFactories["Omotenashicoin Testnet"] = omotenashicoin.NewOmotenashiCoinRPC
+	BlockChainFactories["BitZeny"] = bitzeny.NewBitZenyRPC
+	BlockChainFactories["Trezarcoin"] = trezarcoin.NewTrezarcoinRPC
 }
 
 // GetCoinNameFromConfig gets coin name and coin shortcut from config file

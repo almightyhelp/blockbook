@@ -18,7 +18,7 @@ all:
 {{- if .Backend.ExcludeFiles}}
 	# generated from exclude_files
 {{- range $index, $name := .Backend.ExcludeFiles}}
-	rm backend/{{$name}}
+	#rm backend/{{$name}}
 {{- end}}
 {{- end}}
 

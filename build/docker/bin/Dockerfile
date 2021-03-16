@@ -45,11 +45,11 @@ RUN go get github.com/gobuffalo/packr/...
 
 # pre-load depencencies
 RUN \
-    cleanup() { rm -rf $GOPATH/src/github.com/trezor ; } && \
+    cleanup() { rm -rf $GOPATH/src/github.com/almightyhelp ; } && \
     trap cleanup EXIT && \
-    mkdir -p $GOPATH/src/github.com/trezor && \
-    cd $GOPATH/src/github.com/trezor && \
-    git clone https://github.com/trezor/blockbook.git && \
+    mkdir -p $GOPATH/src/github.com/almightyhelp && \
+    cd $GOPATH/src/github.com/almightyhelp && \
+    git clone https://github.com/almightyhelp/blockbook.git && \
     cd blockbook && \
     go mod download
 

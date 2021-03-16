@@ -15,7 +15,7 @@ import (
 	"github.com/martinboehm/btcutil/chaincfg"
 	"github.com/martinboehm/btcutil/hdkeychain"
 	"github.com/martinboehm/btcutil/txscript"
-	"github.com/trezor/blockbook/bchain"
+	"almightyhelp/blockbook/blockbook/bchain"
 )
 
 // temp params for signet(wait btcd commit)

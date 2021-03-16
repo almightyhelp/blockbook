@@ -19,13 +19,13 @@ import (
 
 	"github.com/golang/glog"
 	"github.com/juju/errors"
-	"github.com/trezor/blockbook/api"
-	"github.com/trezor/blockbook/bchain"
-	"github.com/trezor/blockbook/bchain/coins"
-	"github.com/trezor/blockbook/common"
-	"github.com/trezor/blockbook/db"
-	"github.com/trezor/blockbook/fiat"
-	"github.com/trezor/blockbook/server"
+	"github.com/almightyhelp/blockbook/api"
+	"github.com/almightyhelp/blockbook/bchain"
+	"github.com/almightyhelp/blockbook/bchain/coins"
+	"github.com/almightyhelp/blockbook/common"
+	"github.com/almightyhelp/blockbook/db"
+	"github.com/almightyhelp/blockbook/fiat"
+	"github.com/almightyhelp/blockbook/server"
 )
 
 // debounce too close requests for resync

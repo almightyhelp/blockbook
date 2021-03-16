@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/trezor/blockbook/build/tools"
+	"almightyhelp/blockbook/blockbook/build/tools"
 )
 
 const (
