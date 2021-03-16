@@ -11,11 +11,12 @@ import (
 
 	"github.com/juju/errors"
 	"github.com/trezor/blockbook/bchain"
-	"github.com/trezor/blockbook/bchain/coins/bch"
+	
+"github.com/trezor/blockbook/bchain/coins/bch"
 	"github.com/trezor/blockbook/bchain/coins/bellcoin"
 	"github.com/trezor/blockbook/bchain/coins/bitcore"
 	"github.com/trezor/blockbook/bchain/coins/bitzeny"
-	"github.com/trezor/blockbook/bchain/coins/btc"
+  "github.com/trezor/blockbook/bchain/coins/btc"
 	"github.com/trezor/blockbook/bchain/coins/btg"
 	"github.com/trezor/blockbook/bchain/coins/cpuchain"
 	"github.com/trezor/blockbook/bchain/coins/dash"
@@ -39,7 +40,8 @@ import (
 	"github.com/trezor/blockbook/bchain/coins/namecoin"
 	"github.com/trezor/blockbook/bchain/coins/nuls"
 	"github.com/trezor/blockbook/bchain/coins/omotenashicoin"
-	"github.com/trezor/blockbook/bchain/coins/pivx"
+	 "github.com/trezor/blockbook/bchain/coins/pivx"
+	 "github.com/almightyhelp/blockbook/tree/master/bchain/coins/rainbitcoin"
 	"github.com/trezor/blockbook/bchain/coins/polis"
 	"github.com/trezor/blockbook/bchain/coins/qtum"
 	"github.com/trezor/blockbook/bchain/coins/ravencoin"
@@ -60,7 +62,7 @@ type blockChainFactory func(config json.RawMessage, pushHandler func(bchain.Noti
 var BlockChainFactories = make(map[string]blockChainFactory)
 
 func init() {
-	BlockChainFactories["Bitcoin"] = btc.NewBitcoinRPC
+	 BlockChainFactories["Bitcoin"] = btc.NewBitcoinRPC
 	BlockChainFactories["Testnet"] = btc.NewBitcoinRPC
 	BlockChainFactories["Signet"] = btc.NewBitcoinRPC
 	BlockChainFactories["Zcash"] = zec.NewZCashRPC
@@ -95,31 +97,32 @@ func init() {
 	BlockChainFactories["Liquid"] = liquid.NewLiquidRPC
 	BlockChainFactories["Groestlcoin"] = grs.NewGroestlcoinRPC
 	BlockChainFactories["Groestlcoin Testnet"] = grs.NewGroestlcoinRPC
-	BlockChainFactories["PIVX"] = pivx.NewPivXRPC
-	BlockChainFactories["PIVX Testnet"] = pivx.NewPivXRPC
-	BlockChainFactories["Polis"] = polis.NewPolisRPC
-	BlockChainFactories["Firo"] = firo.NewFiroRPC
-	BlockChainFactories["Fujicoin"] = fujicoin.NewFujicoinRPC
-	BlockChainFactories["Flo"] = flo.NewFloRPC
-	BlockChainFactories["Bellcoin"] = bellcoin.NewBellcoinRPC
-	BlockChainFactories["Qtum"] = qtum.NewQtumRPC
-	BlockChainFactories["Viacoin"] = viacoin.NewViacoinRPC
-	BlockChainFactories["Qtum Testnet"] = qtum.NewQtumRPC
-	BlockChainFactories["NULS"] = nuls.NewNulsRPC
-	BlockChainFactories["VIPSTARCOIN"] = vipstarcoin.NewVIPSTARCOINRPC
-	BlockChainFactories["ZelCash"] = zec.NewZCashRPC
-	BlockChainFactories["Ravencoin"] = ravencoin.NewRavencoinRPC
-	BlockChainFactories["Ritocoin"] = ritocoin.NewRitocoinRPC
-	BlockChainFactories["Divi"] = divi.NewDiviRPC
-	BlockChainFactories["CPUchain"] = cpuchain.NewCPUchainRPC
-	BlockChainFactories["Unobtanium"] = unobtanium.NewUnobtaniumRPC
-	BlockChainFactories["DeepOnion"] = deeponion.NewDeepOnionRPC
-	BlockChainFactories["SnowGem"] = snowgem.NewSnowGemRPC
-	BlockChainFactories["Bitcore"] = bitcore.NewBitcoreRPC
-	BlockChainFactories["Omotenashicoin"] = omotenashicoin.NewOmotenashiCoinRPC
-	BlockChainFactories["Omotenashicoin Testnet"] = omotenashicoin.NewOmotenashiCoinRPC
-	BlockChainFactories["BitZeny"] = bitzeny.NewBitZenyRPC
-	BlockChainFactories["Trezarcoin"] = trezarcoin.NewTrezarcoinRPC
+  BlockChainFactories["PIVX"] = pivx.NewPivXRPC
+  BlockChainFactories["Rainbitcoin"] = rainbitcoin.NewrainbitcoinRPC
+ BlockChainFactories["PIVX Testnet"] = pivx.NewPivXRPC
+ BlockChainFactories["Polis"] = polis.NewPolisRPC
+ BlockChainFactories["Firo"] = firo.NewFiroRPC
+ BlockChainFactories["Fujicoin"] = fujicoin.NewFujicoinRPC
+ BlockChainFactories["Flo"] = flo.NewFloRPC
+ BlockChainFactories["Bellcoin"] = bellcoin.NewBellcoinRPC
+ BlockChainFactories["Qtum"] = qtum.NewQtumRPC
+ BlockChainFactories["Viacoin"] = viacoin.NewViacoinRPC
+ BlockChainFactories["Qtum Testnet"] = qtum.NewQtumRPC
+ BlockChainFactories["NULS"] = nuls.NewNulsRPC
+ BlockChainFactories["VIPSTARCOIN"] = vipstarcoin.NewVIPSTARCOINRPC
+ BlockChainFactories["ZelCash"] = zec.NewZCashRPC
+ BlockChainFactories["Ravencoin"] = ravencoin.NewRavencoinRPC
+ BlockChainFactories["Ritocoin"] = ritocoin.NewRitocoinRPC
+ BlockChainFactories["Divi"] = divi.NewDiviRPC
+ BlockChainFactories["CPUchain"] = cpuchain.NewCPUchainRPC
+ BlockChainFactories["Unobtanium"] = unobtanium.NewUnobtaniumRPC
+ BlockChainFactories["DeepOnion"] = deeponion.NewDeepOnionRPC
+ BlockChainFactories["SnowGem"] = snowgem.NewSnowGemRPC
+ BlockChainFactories["Bitcore"] = bitcore.NewBitcoreRPC
+ BlockChainFactories["Omotenashicoin"] = omotenashicoin.NewOmotenashiCoinRPC
+ BlockChainFactories["Omotenashicoin Testnet"] = omotenashicoin.NewOmotenashiCoinRPC
+ BlockChainFactories["BitZeny"] = bitzeny.NewBitZenyRPC
+ BlockChainFactories["Trezarcoin"] = trezarcoin.NewTrezarcoinRPC
 }
 
 // GetCoinNameFromConfig gets coin name and coin shortcut from config file
