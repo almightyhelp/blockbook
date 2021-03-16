@@ -13,7 +13,7 @@ import (
 	"strconv"
 	"strings"
 
-	build "almightyhelp/blockbook/build/tools"
+	build "github.com/almightyhelp/blockbook/build/tools"
 )
 
 const (

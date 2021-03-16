@@ -18,8 +18,8 @@ import (
 	"github.com/golang/glog"
 	"github.com/juju/errors"
 	"github.com/tecbot/gorocksdb"
-	"almightyhelp/blockbook/bchain"
-	"almightyhelp/blockbook/common"
+	"github.com/almightyhelp/blockbook/bchain"
+	"github.com/almightyhelp/blockbook/common"
 )
 
 const dbVersion = 5

@@ -19,11 +19,11 @@ import (
 	"github.com/martinboehm/btcutil/chaincfg"
 	gosocketio "github.com/martinboehm/golang-socketio"
 	"github.com/martinboehm/golang-socketio/transport"
-	"almightyhelp/blockbook/bchain"
-	"almightyhelp/blockbook/bchain/coins/btc"
-	"almightyhelp/blockbook/common"
-	"almightyhelp/blockbook/db"
-	"almightyhelp/blockbook/tests/dbtestdata"
+	"github.com/almightyhelp/blockbook/bchain"
+	"github.com/almightyhelp/blockbook/bchain/coins/btc"
+	"github.com/almightyhelp/blockbook/common"
+	"github.com/almightyhelp/blockbook/db"
+	"github.com/almightyhelp/blockbook/tests/dbtestdata"
 )
 
 func TestMain(m *testing.M) {

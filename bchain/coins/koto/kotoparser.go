@@ -3,8 +3,8 @@ package koto
 import (
 	"github.com/martinboehm/btcd/wire"
 	"github.com/martinboehm/btcutil/chaincfg"
-	"almightyhelp/blockbook/bchain"
-	"almightyhelp/blockbook/bchain/coins/btc"
+	"github.com/almightyhelp/blockbook/bchain"
+	"github.com/almightyhelp/blockbook/bchain/coins/btc"
 )
 
 // magic numbers

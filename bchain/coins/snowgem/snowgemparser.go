@@ -1,8 +1,8 @@
 package snowgem
 
 import (
-	"almightyhelp/blockbook/bchain"
-	"almightyhelp/blockbook/bchain/coins/btc"
+	"github.com/almightyhelp/blockbook/bchain"
+	"github.com/almightyhelp/blockbook/bchain/coins/btc"
 
 	"github.com/martinboehm/btcd/wire"
 	"github.com/martinboehm/btcutil/chaincfg"

@@ -14,10 +14,10 @@ import (
 	"github.com/golang/glog"
 	"github.com/gorilla/websocket"
 	"github.com/juju/errors"
-	"almightyhelp/blockbook/api"
-	"almightyhelp/blockbook/bchain"
-	"almightyhelp/blockbook/common"
-	"almightyhelp/blockbook/db"
+	"github.com/almightyhelp/blockbook/api"
+	"github.com/almightyhelp/blockbook/bchain"
+	"github.com/almightyhelp/blockbook/common"
+	"github.com/almightyhelp/blockbook/db"
 )
 
 const upgradeFailed = "Upgrade failed: "

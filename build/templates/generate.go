@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"almightyhelp/blockbook/build/tools"
+	"github.com/almightyhelp/blockbook/build/tools"
 )
 
 const (

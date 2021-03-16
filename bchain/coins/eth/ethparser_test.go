@@ -9,8 +9,8 @@ import (
 	"reflect"
 	"testing"
 
-	"almightyhelp/blockbook/bchain"
-	"almightyhelp/blockbook/tests/dbtestdata"
+	"github.com/almightyhelp/blockbook/bchain"
+	"github.com/almightyhelp/blockbook/tests/dbtestdata"
 )
 
 func TestEthParser_GetAddrDescFromAddress(t *testing.T) {

@@ -5,8 +5,8 @@ import (
 
 	"github.com/golang/glog"
 	"github.com/juju/errors"
-	"almightyhelp/blockbook/bchain"
-	"almightyhelp/blockbook/bchain/coins/btc"
+	"github.com/almightyhelp/blockbook/bchain"
+	"github.com/almightyhelp/blockbook/bchain/coins/btc"
 )
 
 // KotoRPC is an interface to JSON-RPC bitcoind service

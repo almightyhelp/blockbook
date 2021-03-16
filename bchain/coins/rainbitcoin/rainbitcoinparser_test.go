@@ -14,8 +14,8 @@ import (
 	"testing"
 
 	"github.com/martinboehm/btcutil/chaincfg"
-	"almightyhelp/blockbook/bchain"
-	"almightyhelp/blockbook/bchain/coins/btc"
+	"github.com/almightyhelp/blockbook/bchain"
+	"github.com/almightyhelp/blockbook/bchain/coins/btc"
 )
 
 func TestMain(m *testing.M) {
