@@ -41,7 +41,7 @@ func Test_GetAddrDescFromAddress_Mainnet(t *testing.T) {
 			wantErr: false,
 		},
 	}
-	parser := NewPivXParser(GetChainParams("main"), &btc.Configuration{})
+	parser := NewrainbitcoinParser(GetChainParams("main"), &btc.Configuration{})
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -99,7 +99,7 @@ func Test_GetAddressesFromAddrDesc(t *testing.T) {
 		},
 	}
 
-	parser := NewPivXParser(GetChainParams("main"), &btc.Configuration{})
+	parser := NewrainbitcoinParser(GetChainParams("main"), &btc.Configuration{})
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -254,7 +254,7 @@ func Test_PackTx(t *testing.T) {
 		tx        bchain.Tx
 		height    uint32
 		blockTime int64
-		parser    *PivXParser
+		parser    *rainbitcoinParser
 	}
 	tests := []struct {
 		name    string
@@ -263,34 +263,34 @@ func Test_PackTx(t *testing.T) {
 		wantErr bool
 	}{
 		{
-			name: "pivx-1",
+			name: "rainbitcoin-1",
 			args: args{
 				tx:        testTx1,
 				height:    800000,
 				blockTime: 1504351235,
-				parser:    NewPivXParser(GetChainParams("main"), &btc.Configuration{}),
+				parser:    NewrainbitcoinParser(GetChainParams("main"), &btc.Configuration{}),
 			},
 			want:    testTxPacked1,
 			wantErr: false,
 		},
 		{
-			name: "pivx-2",
+			name: "rainbitcoin-2",
 			args: args{
 				tx:        testTx2,
 				height:    863800,
 				blockTime: 1508218269,
-				parser:    NewPivXParser(GetChainParams("main"), &btc.Configuration{}),
+				parser:    NewrainbitcoinParser(GetChainParams("main"), &btc.Configuration{}),
 			},
 			want:    testTxPacked2,
 			wantErr: false,
 		},
 		{
-			name: "pivx-3",
+			name: "rainbitcoin-3",
 			args: args{
 				tx:        testTx3,
 				height:    1300002,
 				blockTime: 1534045750,
-				parser:    NewPivXParser(GetChainParams("main"), &btc.Configuration{}),
+				parser:    NewrainbitcoinParser(GetChainParams("main"), &btc.Configuration{}),
 			},
 			want:    testTxPacked3,
 			wantErr: false,
@@ -314,7 +314,7 @@ func Test_PackTx(t *testing.T) {
 func Test_UnpackTx(t *testing.T) {
 	type args struct {
 		packedTx string
-		parser   *PivXParser
+		parser   *rainbitcoinParser
 	}
 	tests := []struct {
 		name    string
@@ -324,30 +324,30 @@ func Test_UnpackTx(t *testing.T) {
 		wantErr bool
 	}{
 		{
-			name: "pivx-1",
+			name: "rainbitcoin-1",
 			args: args{
 				packedTx: testTxPacked1,
-				parser:   NewPivXParser(GetChainParams("main"), &btc.Configuration{}),
+				parser:   NewrainbitcoinParser(GetChainParams("main"), &btc.Configuration{}),
 			},
 			want:    &testTx1,
 			want1:   800000,
 			wantErr: false,
 		},
 		{
-			name: "pivx-2",
+			name: "rainbitcoin-2",
 			args: args{
 				packedTx: testTxPacked2,
-				parser:   NewPivXParser(GetChainParams("main"), &btc.Configuration{}),
+				parser:   NewrainbitcoinParser(GetChainParams("main"), &btc.Configuration{}),
 			},
 			want:    &testTx2,
 			want1:   863800,
 			wantErr: false,
 		},
 		{
-			name: "pivx-3",
+			name: "rainbitcoin-3",
 			args: args{
 				packedTx: testTxPacked3,
-				parser:   NewPivXParser(GetChainParams("main"), &btc.Configuration{}),
+				parser:   NewrainbitcoinParser(GetChainParams("main"), &btc.Configuration{}),
 			},
 			want:    &testTx3,
 			want1:   1300002,
@@ -445,7 +445,7 @@ func helperLoadBlock(t *testing.T, height int) []byte {
 }
 
 func TestParseBlock(t *testing.T) {
-	p := NewPivXParser(GetChainParams("main"), &btc.Configuration{})
+	p := NewrainbitcoinParser(GetChainParams("main"), &btc.Configuration{})
 
 	for height, tb := range testParseBlockTxs {
 		b := helperLoadBlock(t, height)
