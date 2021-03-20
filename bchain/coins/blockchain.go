@@ -41,6 +41,7 @@ import (
 	"github.com/almightyhelp/blockbook/bchain/coins/omotenashicoin"
 	"github.com/almightyhelp/blockbook/bchain/coins/pivx"
 	"github.com/almightyhelp/blockbook/bchain/coins/rainbitcoin"
+	"github.com/almightyhelp/blockbook/bchain/coins/guapcoin"
 	"github.com/almightyhelp/blockbook/bchain/coins/polis"
 	"github.com/almightyhelp/blockbook/bchain/coins/qtum"
 	"github.com/almightyhelp/blockbook/bchain/coins/ravencoin"
@@ -98,6 +99,7 @@ func init() {
 	BlockChainFactories["Groestlcoin Testnet"] = grs.NewGroestlcoinRPC
 	BlockChainFactories["PIVX"] = pivx.NewPivXRPC
 	BlockChainFactories["Rainbitcoin"] = rainbitcoin.NewrainbitcoinRPC
+	BlockChainFactories["Guapcoin"] = guapcoin.NewguapcoinRPC
 	BlockChainFactories["PIVX Testnet"] = pivx.NewPivXRPC
 	BlockChainFactories["Polis"] = polis.NewPolisRPC
 	BlockChainFactories["Firo"] = firo.NewFiroRPC
