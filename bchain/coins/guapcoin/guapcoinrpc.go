@@ -11,6 +11,7 @@ import (
 // guapcoinRPC is an interface to JSON-RPC bitcoind service.
 type guapcoinRPC struct {
 	*btc.BitcoinRPC
+	BitcoinGetChainInfo func() (*bchain.ChainInfo, error)
 }
 
 // NewguapcoinRPC returns new guapcoinRPC instance.
