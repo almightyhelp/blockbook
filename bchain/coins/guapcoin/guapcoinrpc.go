@@ -138,52 +138,10 @@ type ResGetMasternodeCount struct {
 }
 
 // GetNextSuperBlock returns the next superblock height after nHeight
-func (b *guapcoinRPC) GetNextSuperBlock(nHeight int) int {
-    nBlocksPerPeriod := 43200
-    if b.Testnet {
-        nBlocksPerPeriod = 144
-    }
-    return nHeight - nHeight % nBlocksPerPeriod + nBlocksPerPeriod
-}
+
 
 // GetChainInfo returns information about the connected backend
 // guapcoin adds Money Supply to btc implementation
-func (b *guapcoinRPC) GetChainInfo() (*bchain.ChainInfo, error) {
-    rv, err := b.BitcoinGetChainInfo()
-    if err != nil {
-        return nil, err
-    }
-
-    glog.V(1).Info("rpc: getinfo")
-
-    resGi := ResGetInfo{}
-    err = b.Call(&CmdGetInfo{Method: "getinfo"}, &resGi)
-    if err != nil {
-        return nil, err
-    }
-    if resGi.Error != nil {
-        return nil, resGi.Error
-    }
-    rv.TransparentSupply = resGi.Result.TransparentSupply
-        rv.ShieldSupply = resGi.Result.ShieldSupply
-        rv.MoneySupply = resGi.Result.MoneySupply
-
-    glog.V(1).Info("rpc: getmasternodecount")
-
-    resMc := ResGetMasternodeCount{}
-    err = b.Call(&CmdGetMasternodeCount{Method: "getmasternodecount"}, &resMc)
-    if err != nil {
-        return nil, err
-    }
-    if resMc.Error != nil {
-        return nil, resMc.Error
-    }
-    rv.MasternodeCount = resMc.Result.Enabled
-
-    rv.NextSuperBlock = b.GetNextSuperBlock(rv.Headers)
-
-    return rv, nil
-}
 
 // findserial
 type CmdFindSerial struct {
