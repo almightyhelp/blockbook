@@ -23,7 +23,7 @@ func NewguapcoinRPC(config json.RawMessage, pushHandler func(bchain.Notification
 
 	s := &guapcoinRPC{
 		b.(*btc.BitcoinRPC),
-		 b.GetChainInfo,
+		 //b.GetChainInfo,
 	}
 	s.RPCMarshaler = btc.JSONMarshalerV1{}
 	s.ChainConfig.SupportsEstimateFee = true
