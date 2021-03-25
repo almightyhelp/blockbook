@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/hex"
 	"encoding/json"
-	"io"
+	//"io"
 	"math/big"
 
 	"github.com/juju/errors"
@@ -95,10 +95,10 @@ func (p *guapcoinParser) ParseBlock(b []byte) (*bchain.Block, error) {
 		return nil, errors.Annotatef(err, "Deserialize")
 	}
 
-	if h.Version > 3 && h.Version < 7 {
+	//if h.Version > 3 && h.Version < 7 {
 		// Skip past AccumulatorCheckpoint (block version 4, 5 and 6)
-		r.Seek(32, io.SeekCurrent)
-	}
+	//	r.Seek(32, io.SeekCurrent)
+	//}
 
 	err = utils.DecodeTransactions(r, 0, wire.WitnessEncoding, &w)
 	if err != nil {
