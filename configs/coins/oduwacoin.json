@@ -25,7 +25,7 @@
     "version": "2.0-IVIE",
     "binary_url": "http://ebcr.rainit.in/DedicateServer/Oduwacoin-v2.0-IVIE.zip",
     "verification_type": "sha256",
-    "verification_source": "d52445f4adc35e6a8afb8a2da510c0373640a75d6b63aee59c3c7ce1ce65e85d",
+    "verification_source": "b5e4ae2636f4dc2bf91f37fd56940d59e212996d5e0c25cd99e7afd3465d28cb",
     "extract_command": "unzip -d backend",
     "exclude_files": [
       "bin/oduwacoin-qt"
