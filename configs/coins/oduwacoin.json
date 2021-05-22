@@ -22,7 +22,7 @@
     "package_name": "backend-oduwacoin",
     "package_revision": "satoshilabs-1",
     "system_user": "OWC",
-    "version": "v2.0-IVIE",
+    "version": "2.0-IVIE",
     "binary_url": "http://ebcr.rainit.in/DedicateServer/Oduwacoin-v2.0-IVIE.zip",
     "verification_type": "sha256",
     "verification_source": "4d1812da5b64db577bfcb739e5a6cc178cab5eb271ffc6c40e93165374674152",
