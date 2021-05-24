@@ -1,19 +1,9 @@
 package oduwacoin
 
 import (
-	"bytes"
-	"encoding/hex"
-	"encoding/json"
-	"io"
-	"math/big"
-
-	"github.com/juju/errors"
-	"github.com/martinboehm/btcd/blockchain"
 	"github.com/martinboehm/btcd/wire"
 	"github.com/martinboehm/btcutil/chaincfg"
-	"github.com/almightyhelp/blockbook/bchain"
 	"github.com/almightyhelp/blockbook/bchain/coins/btc"
-	"github.com/almightyhelp/blockbook/bchain/coins/utils"
 )
 
 // magic numbers
@@ -55,11 +45,7 @@ type oduwacoinParser struct {
 
 // NewoduwacoinParser returns new oduwacoinParser instance
 func NewoduwacoinParser(params *chaincfg.Params, c *btc.Configuration) *oduwacoinParser {
-	p := &oduwacoinParser{
-		BitcoinParser: btc.NewBitcoinParser(params, c),
-		baseparser:    &bchain.BaseParser{},
-	}
-	return p
+	return &oduwacoinParser{BitcoinParser: btc.NewBitcoinParser(params, c)}
 }
 
 // GetChainParams contains network parameters for the main oduwacoin network
