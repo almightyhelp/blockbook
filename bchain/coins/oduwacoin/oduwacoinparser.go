@@ -96,8 +96,8 @@ func (p *oduwacoinParser) ParseBlock(b []byte) (*bchain.Block, error) {
 	}
 
 	if h.Version > 3 && h.Version < 7 {
-		Skip past AccumulatorCheckpoint (block version 4, 5 and 6)
-		r.Seek(32, io.SeekCurrent)
+		Skip past AccumulatorCheckpoint (block version 4, 5 and 6);
+		r.Seek(32, io.SeekCurrent);
 	}
 
 	err = utils.DecodeTransactions(r, 0, wire.WitnessEncoding, &w)
