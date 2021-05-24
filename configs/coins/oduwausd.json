@@ -22,7 +22,7 @@
     "package_name": "backend-oduwausd",
     "package_revision": "satoshilabs-1",
     "system_user": "OWDT",
-    "version": "1.0",
+    "version": "1.0.0",
     "binary_url": "http://ebcr.rainit.in/DedicateServer/OduwaUSD-1.0.zip",
     "verification_type": "sha256",
     "verification_source": "68d882d5f48aad814353308ec9ad6f021a3829cc4e7d6608aab4ac3656f38fe9",
