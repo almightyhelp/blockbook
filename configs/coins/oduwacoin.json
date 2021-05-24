@@ -59,7 +59,7 @@
       "slip44": 0,
 	 "additional_params": {
         "fiat_rates": "coingecko",
-        "fiat_rates_params": "{\"url\": \"https://api.coingecko.com/api/v3\", \"coin\": \"oduwacoin\", \"periodSeconds\": 60}"
+        "fiat_rates_params": "{\"url\": \"https://api.coingecko.com/api/v3\", \"coin\": \"oduwa-coin\", \"periodSeconds\": 60}"
      }
     }
   },
