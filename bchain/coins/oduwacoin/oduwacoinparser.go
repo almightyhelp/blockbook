@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/hex"
 	"encoding/json"
-//	"io"
+	"io"
 	"math/big"
 
 	"github.com/juju/errors"
