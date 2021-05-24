@@ -439,9 +439,9 @@ func (p *BitcoinParser) DerivationBasePath(xpub string) (string, error) {
 		c = "'"
 	}
 	c = strconv.Itoa(int(cn)) + c
-	//if extKey.Depth() != 3 {
-		//return "unknown/" + c, nil
-	//}
+	if extKey.Depth() != 3 {
+		return "unknown/" + c, nil
+	}
 	if extKey.Version() == p.XPubMagicSegwitP2sh {
 		bip = "49"
 	} else if extKey.Version() == p.XPubMagicSegwitNative {

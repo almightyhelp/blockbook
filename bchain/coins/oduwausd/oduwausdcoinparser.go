@@ -1,4 +1,4 @@
-package oduwacoin
+package oduwausd
 
 import (
 	"bytes"
@@ -18,7 +18,7 @@ import (
 
 // magic numbers
 const (
-	MainnetMagic wire.BitcoinNet = 0x6ae31bc4
+	MainnetMagic wire.BitcoinNet = 0xad6cb7e3
 	TestnetMagic wire.BitcoinNet = 0xba657645
 
 	// Zerocoin op codes
@@ -33,14 +33,14 @@ var (
 )
 
 func init() {
-	// oduwacoin mainnet Address encoding magics
+	// oduwausd mainnet Address encoding magics
 	MainNetParams = chaincfg.MainNetParams
 	MainNetParams.Net = MainnetMagic
-	MainNetParams.PubKeyHashAddrID = []byte{23} // starting with 'D'
-	MainNetParams.ScriptHashAddrID = []byte{85}
-	MainNetParams.PrivateKeyID = []byte{151}
+	MainNetParams.PubKeyHashAddrID = []byte{115} // starting with 'D'
+	MainNetParams.ScriptHashAddrID = []byte{68}
+	MainNetParams.PrivateKeyID = []byte{183}
 
-	// oduwacoin testnet Address encoding magics
+	// oduwausd testnet Address encoding magics
 	TestNetParams = chaincfg.TestNet3Params
 	TestNetParams.Net = TestnetMagic
 	TestNetParams.PubKeyHashAddrID = []byte{139} // starting with 'x' or 'y'
@@ -48,22 +48,28 @@ func init() {
 	TestNetParams.PrivateKeyID = []byte{239}
 }
 
-// oduwacoinParser handle
-type oduwacoinParser struct {
+// oduwausdParser handle
+type oduwausdParser struct {
 	*btc.BitcoinParser
 }
 
-// NewoduwacoinParser returns new oduwacoinParser instance
-func NewoduwacoinParser(params *chaincfg.Params, c *btc.Configuration) *oduwacoinParser {
-	p := &oduwacoinParser{
+// NewoduwausdParser returns new oduwausdParser instance
+func NewoduwausdParser(params *chaincfg.Params, c *btc.Configuration) *oduwausdParser {
+	p := &oduwausdParser{
 		BitcoinParser: btc.NewBitcoinParser(params, c),
 		baseparser:    &bchain.BaseParser{},
 	}
 	return p
 }
 
-// GetChainParams contains network parameters for the main oduwacoin network
+// GetChainParams contains network parameters for the main oduwausd network
 func GetChainParams(chain string) *chaincfg.Params {
+	// register bitcoin parameters in addition to litecoin parameters
+	// litecoin has dual standard of addresses and we want to be able to
+	// parse both standards
+	if !chaincfg.IsRegistered(&chaincfg.MainNetParams) {
+		chaincfg.RegisterBitcoinParams()
+	}
 	if !chaincfg.IsRegistered(&MainNetParams) {
 		err := chaincfg.Register(&MainNetParams)
 		if err == nil {
