@@ -44,7 +44,7 @@ func (JSONMarshalerV1) Marshal(v interface{}) ([]byte, error) {
 		u.Params = append(u.Params, t)
 	case *CmdGetRawTransaction:
 		var n int
-		if v.Params.Verbose {
+		if (v.Params.Verbose == 1) {
 			n = 1
 		}
 		u.Method = v.Method

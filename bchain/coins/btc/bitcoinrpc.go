@@ -333,7 +333,7 @@ type CmdGetRawTransaction struct {
 	Method string `json:"method"`
 	Params struct {
 		Txid    string `json:"txid"`
-		Verbose bool   `json:"verbose"`
+		Verbose int   `json:"verbose"`
 	} `json:"params"`
 }
 
@@ -687,12 +687,16 @@ func IsMissingTx(err *bchain.RPCError) bool {
 // GetTransactionForMempool returns a transaction by the transaction ID
 // It could be optimized for mempool, i.e. without block time and confirmations
 func (b *BitcoinRPC) GetTransactionForMempool(txid string) (*bchain.Tx, error) {
+	if !b.ParseBlocks {
+		return b.GetTransaction(txid)
+	}
+
 	glog.V(1).Info("rpc: getrawtransaction nonverbose ", txid)
 
 	res := ResGetRawTransactionNonverbose{}
 	req := CmdGetRawTransaction{Method: "getrawtransaction"}
 	req.Params.Txid = txid
-	req.Params.Verbose = false
+	req.Params.Verbose = 0
 	err := b.Call(&req, &res)
 	if err != nil {
 		return nil, errors.Annotatef(err, "txid %v", txid)
@@ -743,7 +747,7 @@ func (b *BitcoinRPC) getRawTransaction(txid string) (json.RawMessage, error) {
 	res := ResGetRawTransaction{}
 	req := CmdGetRawTransaction{Method: "getrawtransaction"}
 	req.Params.Txid = txid
-	req.Params.Verbose = true
+	req.Params.Verbose = 1
 	err := b.Call(&req, &res)
 
 	if err != nil {

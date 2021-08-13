@@ -2,7 +2,7 @@
   "coin": {
     "name": "OduwaUSD",
     "shortcut": "OWDT",
-    "label": "oduwausd",
+    "label": "OduwaUSD",
     "alias": "oduwausd"
   },
   "ports": {
@@ -56,7 +56,7 @@
       "mempool_sub_workers": 2,
       "block_addresses_to_keep": 300,
       "xpub_magic": 76067358,
-      "slip44": 10,
+      "slip44": 0,
 	 "additional_params": {
         "fiat_rates": "coingecko",
         "fiat_rates_params": "{\"url\": \"https://api.coingecko.com/api/v3\", \"coin\": \"oduwausd\", \"periodSeconds\": 60}"

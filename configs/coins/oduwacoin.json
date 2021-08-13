@@ -2,7 +2,7 @@
   "coin": {
     "name": "Oduwacoin",
     "shortcut": "OWC",
-    "label": "oduwacoin",
+    "label": "Oduwacoin",
     "alias": "oduwacoin"
   },
   "ports": {
@@ -23,10 +23,10 @@
     "package_revision": "satoshilabs-1",
     "system_user": "OWC",
     "version": "2.0-IVIE",
-    "binary_url": "http://ebcr.rainit.in/DedicateServer/Oduwacoin-2.0-IVIE.zip",
+    "binary_url": "https://github.com/ODUWAX/oduwacoin/releases/download/v2.0.0.1/OduwaCoin-2.0.0.1-ubuntu-daemon.tar.gz",
     "verification_type": "sha256",
-    "verification_source": "9f616c7c69a7c50a06d5a0bc5823bdd9779b84c5687f18b14778854745c7276c",
-    "extract_command": "unzip -d backend",
+    "verification_source": "4f5fac34ae23fde02da0ac7d49f2818234d5c25ed07c30c7245c36b6b4febd5c",
+    "extract_command": "tar -C backend --strip 1 -xf",
     "exclude_files": [
       "bin/oduwacoin-qt"
     ],
@@ -49,14 +49,14 @@
     "internal_binding_template": ":{{.Ports.BlockbookInternal}}",
     "public_binding_template": ":{{.Ports.BlockbookPublic}}",
     "explorer_url": "",
-	 "additional_params": "",
+    "additional_params": "-dbcache=0",
     "block_chain": {
       "parse": true,
       "mempool_workers": 8,
       "mempool_sub_workers": 2,
       "block_addresses_to_keep": 300,
       "xpub_magic": 76067358,
-      "slip44": 0,
+      "slip44": 10,
 	 "additional_params": {
         "fiat_rates": "coingecko",
         "fiat_rates_params": "{\"url\": \"https://api.coingecko.com/api/v3\", \"coin\": \"oduwa-coin\", \"periodSeconds\": 60}"
