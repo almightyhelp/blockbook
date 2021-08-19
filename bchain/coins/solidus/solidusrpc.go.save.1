@@ -1,0 +1,193 @@
+package solidus
+
+import (
+	"github.com/almightyhelp/blockbook/bchain"
+	"github.com/almightyhelp/blockbook/bchain/coins/btc"
+	"github.com/almightyhelp/blockbook/common"
+	"encoding/json"
+	"github.com/juju/errors"
+	"github.com/golang/glog"
+)
+
+ // solidusRPC is an interface to JSON-RPC bitcoind service.
+type solidusRPC struct {
+	*btc.BitcoinRPC
+}
+
+// getblockchaininfo
+type CmdGetInfo struct {
+        Method string `json:"method"`
+}
+type ResGetInfo struct {
+        Error  *bchain.RPCError `json:"error"`
+        Result struct {
+                Testnet         bool        `json:"testnet"`
+                Blocks          int         `json:"blocks"`
+		Version	        common.JSONNumber      `json:"version"`
+		Bestblockhash	        string      `json:"bestblockhash"`
+		ProtocolVersion common.JSONNumber         `json:"protocolversion"`
+                Difficulty struct {
+                       ProofOfWork  json.Number `json:"proof-of-work"`
+                       ProofOfStake json.Number `json:"proof-of-stake"`
+                }
+              	Errors	      string      `json:"errors"`
+        } `json:"result"`
+}
+
+
+ // GetChainInfo returns information about the connected backend
+func (b *solidusRPC) GetChainInfo() (*bchain.ChainInfo, error) {
+        glog.V(1).Info("rpc: getinfo")
+
+         resCi := ResGetInfo{}
+        err := b.Call(&CmdGetInfo{Method: "getinfo"}, &resCi)
+        if err != nil {
+                return nil, err
+        }
+
+         //glog.V(1).Info("rpc: getbestblockhash")
+//        resNi := ResGetBestBlockHash{}
+  ///      err = b.Call(&CmdGetBestBlockHash{Method: "getbestblockhash"}, &resNi)
+     //   if err != nil {
+       //         return nil, err
+        //}
+        
+         // cant store difficulty here as there are two types
+        rv := &bchain.ChainInfo{
+                Bestblockhash: resCi.Result.Bestblockhash,
+                Blocks:        resCi.Result.Blocks,
+                Chain:         "main",
+                Headers:       resCi.Result.Blocks,
+                Subversion:    string(resCi.Result.Version),
+                Timeoffset:    0,
+        }
+        rv.Version = string(resCi.Result.Version)
+        rv.ProtocolVersion = string(resCi.Result.ProtocolVersion)
+        //if len(resCi.Result.Warnings) > 0 {
+	//	rv.Warnings = resCi.Result.Warnings + " "
+	//}
+	//if resCi.Result.Warnings != resNi.Result.Warnings {
+	//	rv.Warnings += resNi.Result.Warnings
+	//}
+        if len(resCi.Result.Errors) > 0 {
+                rv.Warnings = resCi.Result.Errors + " "
+        }
+        
+        return rv, nil
+}
+
+
+ // NewsolidusRPC returns new solidusRPC instance.
+func NewsolidusRPC(config json.RawMessage, pushHandler func(bchain.NotificationType)) (bchain.BlockChain, error) {
+	b, err := btc.NewBitcoinRPC(config, pushHandler)
+	if err != nil {
+		return nil, err
+	}
+
+ 	s := &solidusRPC{
+		b.(*btc.BitcoinRPC),
+	}
+	s.RPCMarshaler = btc.JSONMarshalerV1{}
+	s.ChainConfig.SupportsEstimateSmartFee = true
+
+ 	return s, nil
+}
+
+ // Initialize initializes solidusRPC instance.
+func (b *solidusRPC) Initialize() error {
+    ci, err := b.GetChainInfo()
+    if err != nil {
+        return err
+    }
+    chainName := ci.Chain
+
+ 	params := GetChainParams(chainName)
+
+ 	// always create parser
+	b.Parser = NewsolidusParser(params, b.ChainConfig)
+
+ 	// parameters for getInfo request
+	if params.Net == MainnetMagic {
+		b.Testnet = false
+		b.Network = "livenet"
+	} else {
+		b.Testnet = true
+		b.Network = "testnet"
+	}
+
+ 	glog.Info("rpc: block chain ", params.Name)
+
+ 	return nil
+}
+
+ 
+
+ func isErrBlockNotFound(err *bchain.RPCError) bool {
+	return err.Message == "Block not found" ||
+		err.Message == "Block height out of range"
+}
+
+ // GetTransactionForMempool returns a transaction by the transaction ID.
+func (b *solidusRPC) GetTransactionForMempool(txid string) (*bchain.Tx, error) {
+	return b.GetTransaction(txid)
+}
+
+type CmdGetBestBlockHash struct {
+        Method string `json:"method"`
+}
+type ResGetBestBlockHash struct {
+        Error *bchain.RPCError `json:"error"`
+        Result string `json:"result"`
+}
+type BlockThin struct {
+        bchain.BlockHeader
+        Txids []string `json:"tx"`
+}
+
+type ResGetBlockThin struct {
+        Error  *bchain.RPCError `json:"error"`
+        Result BlockThin        `json:"result"`
+}
+
+func (z *solidusRPC) GetBlock(hash string, height uint32) (*bchain.Block, error) {
+	var err error
+	if hash == "" && height > 0 {
+		hash, err = z.GetBlockHash(height)
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	glog.V(1).Info("rpc: getblock (verbosity=1) ", hash)
+
+	res := btc.ResGetBlockThin{}
+	req := btc.CmdGetBlock{Method: "getblock"}
+	req.Params.BlockHash = hash
+	req.Params.Verbosity = 1
+	err = z.Call(&req, &res)
+
+	if err != nil {
+		return nil, errors.Annotatef(err, "hash %v", hash)
+	}
+	if res.Error != nil {
+		return nil, errors.Annotatef(res.Error, "hash %v", hash)
+	}
+
+	txs := make([]bchain.Tx, 0, len(res.Result.Txids))
+	for _, txid := range res.Result.Txids {
+		tx, err := s.GetTransaction(txid)
+		if err != nil {
+			if err == bchain.ErrTxNotFound {
+				glog.Errorf("rpc: getblock: skipping transanction in block %s due error: %s", hash, err)
+				continue
+			}
+			return nil, err
+		}
+		txs = append(txs, *tx)
+	}
+	block := &bchain.Block{
+		BlockHeader: res.Result.BlockHeader,
+		Txs:         txs,
+	}
+	return block, nil
+}
