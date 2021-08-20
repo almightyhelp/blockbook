@@ -3,66 +3,68 @@ package solidus
 import (
 	"github.com/martinboehm/btcd/wire"
 	"github.com/martinboehm/btcutil/chaincfg"
-	"github.com/almightyhelp/blockbook/bchain"
 	"github.com/almightyhelp/blockbook/bchain/coins/btc"
 )
 
 // magic numbers
 const (
-	MainnetMagic wire.BitcoinNet = 0x6ae31bc4
+	MainnetMagic wire.BitcoinNet = 0xdbb6c0fb
+	TestnetMagic wire.BitcoinNet = 0xf1c8d2fd
+	RegtestMagic wire.BitcoinNet = 0xdab5bffa
 )
 
 // chain parameters
 var (
 	MainNetParams chaincfg.Params
+	TestNetParams chaincfg.Params
 )
 
 func init() {
-	// solidus mainnet Address encoding magics
 	MainNetParams = chaincfg.MainNetParams
 	MainNetParams.Net = MainnetMagic
-	MainNetParams.PubKeyHashAddrID = []byte{23} // starting with 'D'
-	MainNetParams.ScriptHashAddrID = []byte{85}
-	MainNetParams.PrivateKeyID = []byte{151}
+	MainNetParams.PubKeyHashAddrID = []byte{48}
+	MainNetParams.ScriptHashAddrID = []byte{50}
+	MainNetParams.Bech32HRPSegwit = "ltc"
 
+	TestNetParams = chaincfg.TestNet3Params
+	TestNetParams.Net = TestnetMagic
+	TestNetParams.PubKeyHashAddrID = []byte{111}
+	TestNetParams.ScriptHashAddrID = []byte{58}
+	TestNetParams.Bech32HRPSegwit = "tltc"
 }
 
 // solidusParser handle
-type solidusParser struct {
+type SolidusParser struct {
 	*btc.BitcoinParser
-	baseparser                         *bchain.BaseParser
 }
 
-// NewsolidusParser returns new solidusParser instance
-func NewsolidusParser(params *chaincfg.Params, c *btc.Configuration) *solidusParser {
-	p := &solidusParser{
-		BitcoinParser: btc.NewBitcoinParser(params, c),
-		baseparser:    &bchain.BaseParser{},
-	}
-	return p
+// NewSolidusParser returns new SolidusParser instance
+func NewSolidusParser(params *chaincfg.Params, c *btc.Configuration) *SolidusParser {
+	return &SolidusParser{BitcoinParser: btc.NewBitcoinParser(params, c)}
 }
 
-// GetChainParams contains network parameters for the main solidus network
+// GetChainParams contains network parameters for the main solidus network,
+// and the test solidus network
 func GetChainParams(chain string) *chaincfg.Params {
+	// register bitcoin parameters in addition to solidus parameters
+	// solidus has dual standard of addresses and we want to be able to
+	// parse both standards
+	if !chaincfg.IsRegistered(&chaincfg.MainNetParams) {
+		chaincfg.RegisterBitcoinParams()
+	}
 	if !chaincfg.IsRegistered(&MainNetParams) {
 		err := chaincfg.Register(&MainNetParams)
+		if err == nil {
+			err = chaincfg.Register(&TestNetParams)
+		}
 		if err != nil {
 			panic(err)
 		}
 	}
 	switch chain {
+	case "test":
+		return &TestNetParams
 	default:
 		return &MainNetParams
 	}
 }
-
-// PackTx packs transaction to byte array using protobuf
-func (p *solidusParser) PackTx(tx *bchain.Tx, height uint32, blockTime int64) ([]byte, error) {
-	return p.baseparser.PackTx(tx, height, blockTime)
-}
-
-// UnpackTx unpacks transaction from protobuf byte array
-func (p *solidusParser) UnpackTx(buf []byte) (*bchain.Tx, uint32, error) {
-	return p.baseparser.UnpackTx(buf)
-}
-
