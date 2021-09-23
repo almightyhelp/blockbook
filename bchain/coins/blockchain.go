@@ -41,6 +41,7 @@ import (
 	"github.com/almightyhelp/blockbook/bchain/coins/omotenashicoin"
 	"github.com/almightyhelp/blockbook/bchain/coins/pivx"
 	"github.com/almightyhelp/blockbook/bchain/coins/oduwacoin"
+	"github.com/almightyhelp/blockbook/bchain/coins/infincoin"
 	"github.com/almightyhelp/blockbook/bchain/coins/solidus"
 	"github.com/almightyhelp/blockbook/bchain/coins/oduwausd"
     "github.com/almightyhelp/blockbook/bchain/coins/guapcoin"
@@ -101,6 +102,7 @@ func init() {
 	BlockChainFactories["Groestlcoin Testnet"] = grs.NewGroestlcoinRPC
 	BlockChainFactories["PIVX"] = pivx.NewPivXRPC
 	BlockChainFactories["Oduwacoin"] = oduwacoin.NewoduwacoinRPC
+	BlockChainFactories["infincoin"] = infincoin.NewinfincoinRPC
 	BlockChainFactories["Solidus"] = solidus.NewsolidusRPC
 	BlockChainFactories["OduwaUSD"] = oduwausd.NewoduwausdRPC
     BlockChainFactories["Guapcoin"] = guapcoin.NewguapcoinRPC
