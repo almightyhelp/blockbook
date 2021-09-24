@@ -102,7 +102,7 @@ func init() {
 	BlockChainFactories["Groestlcoin Testnet"] = grs.NewGroestlcoinRPC
 	BlockChainFactories["PIVX"] = pivx.NewPivXRPC
 	BlockChainFactories["Oduwacoin"] = oduwacoin.NewoduwacoinRPC
-	BlockChainFactories["infincoin"] = infincoin.NewinfincoinRPC
+	BlockChainFactories["Infincoin"] = infincoin.NewinfincoinRPC
 	BlockChainFactories["Solidus"] = solidus.NewsolidusRPC
 	BlockChainFactories["OduwaUSD"] = oduwausd.NewoduwausdRPC
     BlockChainFactories["Guapcoin"] = guapcoin.NewguapcoinRPC
