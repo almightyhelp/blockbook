@@ -53,6 +53,8 @@ import (
 	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/vipstarcoin"
 	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/zec"
 	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/offensecoin"
+	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/oduwacoin"
+	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/oduwausd"
 	"github.com/NikunjVaghasiya01/blockbook/common"
 )
 
@@ -128,6 +130,8 @@ func init() {
 	BlockChainFactories["Trezarcoin"] = trezarcoin.NewTrezarcoinRPC
 	BlockChainFactories["ECash"] = ecash.NewECashRPC
 	BlockChainFactories["Offensecoin"] = offensecoin.NewoffensecoinRPC
+	BlockChainFactories["Oduwacoin"] = oduwacoin.NewoduwacoinRPC
+	BlockChainFactories["OduwaUSD"] = oduwausd.NewoduwausdRPC
 }
 
 // GetCoinNameFromConfig gets coin name and coin shortcut from config file
