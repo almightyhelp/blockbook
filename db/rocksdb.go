@@ -18,8 +18,8 @@ import (
 	"github.com/flier/gorocksdb"
 	"github.com/golang/glog"
 	"github.com/juju/errors"
-	"github.com/trezor/blockbook/bchain"
-	"github.com/trezor/blockbook/common"
+	"github.com/NikunjVaghasiya01/blockbook/bchain"
+	"github.com/NikunjVaghasiya01/blockbook/common"
 )
 
 const dbVersion = 5

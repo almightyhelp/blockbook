@@ -5,8 +5,8 @@ import (
 	"math/big"
 
 	"github.com/golang/glog"
-	"github.com/trezor/blockbook/bchain"
-	"github.com/trezor/blockbook/bchain/coins/btc"
+	"github.com/NikunjVaghasiya01/blockbook/bchain"
+	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/btc"
 )
 
 // QtumRPC is an interface to JSON-RPC bitcoind service.

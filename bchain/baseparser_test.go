@@ -6,7 +6,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/trezor/blockbook/common"
+	"github.com/NikunjVaghasiya01/blockbook/common"
 )
 
 func NewBaseParser(adp int) *BaseParser {

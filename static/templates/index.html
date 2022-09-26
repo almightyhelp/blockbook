@@ -21,7 +21,7 @@
                 </tr>
                 <tr>
                     <td>Version / Commit / Build</td>
-                    <td class="data">{{$bb.Version}} / <a href="https://github.com/trezor/blockbook/commit/{{$bb.GitCommit}}" target="_blank" rel="noopener noreferrer">{{$bb.GitCommit}}</a> / {{$bb.BuildTime}}</td>
+                    <td class="data">{{$bb.Version}} / <a href="https://github.com/NikunjVaghasiya01/blockbook/commit/{{$bb.GitCommit}}" target="_blank" rel="noopener noreferrer">{{$bb.GitCommit}}</a> / {{$bb.BuildTime}}</td>
                 </tr>
                 <tr>
                     <td>Synchronized</td>
@@ -101,10 +101,6 @@
                 </tr>
                 {{- end -}}
                 {{- if $be.Consensus -}}
-                <tr>
-                    <td>Consensus</td>
-                    <td class="data">{{toJSON $be.Consensus}}</td>
-                </tr>
                 {{- end -}}
                 {{- if $be.Warnings -}}
                 <tr>
@@ -116,5 +112,5 @@
         </table>
     </div>
 </div>
-<span class="text-muted">{{$bb.About}}</span>
+<span class="text-muted"></span>
 {{end}}
