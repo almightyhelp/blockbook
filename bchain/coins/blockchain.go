@@ -56,6 +56,8 @@ import (
 	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/oduwacoin"
 	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/oduwausd"
 	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/guapcoin"
+	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/infincoin"
+	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/infincoincash"
 	"github.com/NikunjVaghasiya01/blockbook/common"
 )
 
@@ -134,6 +136,8 @@ func init() {
 	BlockChainFactories["Oduwacoin"] = oduwacoin.NewoduwacoinRPC
 	BlockChainFactories["OduwaUSD"] = oduwausd.NewoduwausdRPC
 	BlockChainFactories["Guapcoin"] = guapcoin.NewguapcoinRPC
+	BlockChainFactories["Infincoin"] = infincoin.NewinfincoinRPC
+	BlockChainFactories["Infincoincash"] = infincoincash.NewinfincoincashRPC
 }
 
 // GetCoinNameFromConfig gets coin name and coin shortcut from config file

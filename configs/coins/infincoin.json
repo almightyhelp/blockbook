@@ -1,0 +1,68 @@
+{
+    "coin": {
+      "name": "Infincoin",
+      "shortcut": "INC",
+      "label": "Infincoin",
+      "alias": "infincoin"
+    },
+    "ports": {
+      "backend_rpc": 28332,
+      "backend_message_queue": 38350,
+      "blockbook_internal": 9051,
+      "blockbook_public": 9151
+    },
+    "ipc": {
+      "rpc_url_template": "http://127.0.0.1:{{.Ports.BackendRPC}}",
+      "rpc_user": "rpc",
+      "rpc_pass": "infinrpc",
+      "rpc_timeout": 25,
+      "message_queue_binding_template": "tcp://127.0.0.1:{{.Ports.BackendMessageQueue}}"
+    },
+    "backend": {
+      "package_name": "backend-infincoin",
+      "package_revision": "satoshilabs-1",
+      "system_user": "INC",
+      "version": "2.0-IVIE",
+      "binary_url": "https://github.com/NikunjVaghasiya01/Daemon/releases/download/Daemon/Infincoin_daemon.tar.gz",
+      "verification_type": "sha256",
+      "verification_source": "99c3d0912c413df85b341632dc200ffefa7266e78cf0eff083659b0442fb0bf2",
+      "extract_command": "tar -C backend --strip 1 -xf",
+      "exclude_files": [],
+      "exec_command_template": "{{.Env.BackendInstallPath}}/{{.Coin.Alias}}/bin/infincoind -datadir={{.Env.BackendDataPath}}/{{.Coin.Alias}}/backend -conf={{.Env.BackendInstallPath}}/{{.Coin.Alias}}/{{.Coin.Alias}}.conf -pid=/run/{{.Coin.Alias}}/{{.Coin.Alias}}.pid",
+      "logrotate_files_template": "{{.Env.BackendDataPath}}/{{.Coin.Alias}}/backend/*.log",
+      "postinst_script_template": "",
+      "service_type": "forking",
+      "service_additional_params_template": "",
+      "protect_memory": false,
+      "mainnet": true,
+      "server_config_file": "bitcoin_like.conf",
+      "client_config_file": "bitcoin_like_client.conf",
+      "additional_params": {
+        "whitelist": "127.0.0.1"
+      }
+    },
+    "blockbook": {
+      "package_name": "blockbook-infincoin",
+      "system_user": "blockbook-infincoin",
+      "internal_binding_template": ":{{.Ports.BlockbookInternal}}",
+      "public_binding_template": ":{{.Ports.BlockbookPublic}}",
+      "explorer_url": "",
+      "additional_params": "-dbcache=0",
+      "block_chain": {
+        "parse": true,
+        "mempool_workers": 8,
+        "mempool_sub_workers": 2,
+        "block_addresses_to_keep": 300,
+        "xpub_magic": 76067358,
+        "slip44": 10,
+       "additional_params": {
+          "fiat_rates": "coingecko",
+          "fiat_rates_params": "{\"url\": \"https://api.coingecko.com/api/v3\", \"coin\": \"oduwa-coin\", \"periodSeconds\": 60}"
+       }
+      }
+    },
+    "meta": {
+      "package_maintainer": "rikardwissing",
+      "package_maintainer_email": "rikard@coinid.org"
+    }
+  }
