@@ -60,6 +60,7 @@ import (
 	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/infincoincash"
 	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/cryptoshares"
 	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/voltnote"
+	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/tnotes"
 	"github.com/NikunjVaghasiya01/blockbook/common"
 )
 
@@ -142,6 +143,7 @@ func init() {
 	BlockChainFactories["Infincoincash"] = infincoincash.NewinfincoincashRPC
 	BlockChainFactories["Cryptoshares"] = cryptoshares.NewcryptosharesRPC
 	BlockChainFactories["Voltnote"] = voltnote.NewvoltnoteRPC
+	BlockChainFactories["Tnotes"] = tnotes.NewtnotesRPC
 }
 
 // GetCoinNameFromConfig gets coin name and coin shortcut from config file
