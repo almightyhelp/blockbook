@@ -58,6 +58,7 @@ import (
 	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/guapcoin"
 	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/infincoin"
 	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/infincoincash"
+	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/cryptoshares"
 	"github.com/NikunjVaghasiya01/blockbook/common"
 )
 
@@ -138,6 +139,7 @@ func init() {
 	BlockChainFactories["Guapcoin"] = guapcoin.NewguapcoinRPC
 	BlockChainFactories["Infincoin"] = infincoin.NewinfincoinRPC
 	BlockChainFactories["Infincoincash"] = infincoincash.NewinfincoincashRPC
+	BlockChainFactories["Cryptoshares"] = cryptoshares.NewcryptosharesRPC
 }
 
 // GetCoinNameFromConfig gets coin name and coin shortcut from config file
