@@ -61,6 +61,7 @@ import (
 	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/cryptoshares"
 	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/voltnote"
 	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/tnotes"
+	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/hibera"
 	"github.com/NikunjVaghasiya01/blockbook/common"
 )
 
@@ -144,6 +145,7 @@ func init() {
 	BlockChainFactories["Cryptoshares"] = cryptoshares.NewcryptosharesRPC
 	BlockChainFactories["Voltnote"] = voltnote.NewvoltnoteRPC
 	BlockChainFactories["Tnotes"] = tnotes.NewtnotesRPC
+	BlockChainFactories["Hibera"] = hibera.NewhiberaRPC
 }
 
 // GetCoinNameFromConfig gets coin name and coin shortcut from config file
