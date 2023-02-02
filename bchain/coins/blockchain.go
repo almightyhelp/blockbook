@@ -34,6 +34,7 @@ import (
 	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/koto"
 	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/liquid"
 	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/litecoin"
+	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/osmanlialtincoin"
 	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/monacoin"
 	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/monetaryunit"
 	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/myriad"
@@ -93,6 +94,7 @@ func init() {
 	BlockChainFactories["Koto"] = koto.NewKotoRPC
 	BlockChainFactories["Koto Testnet"] = koto.NewKotoRPC
 	BlockChainFactories["Litecoin"] = litecoin.NewLitecoinRPC
+	BlockChainFactories["Osmanlialtincoin"] = osmanlialtincoin.NewOsmanlialtincoinRPC
 	BlockChainFactories["Litecoin Testnet"] = litecoin.NewLitecoinRPC
 	BlockChainFactories["Dogecoin"] = dogecoin.NewDogecoinRPC
 	BlockChainFactories["Dogecoin Testnet"] = dogecoin.NewDogecoinRPC
