@@ -1,4 +1,4 @@
-package litecoin
+package osmanlialtincoin
 
 import (
 	"encoding/json"
