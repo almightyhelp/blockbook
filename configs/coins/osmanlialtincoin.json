@@ -59,7 +59,7 @@
         "slip44": 2,
         "additional_params": {
           "fiat_rates": "coingecko",
-          "fiat_rates_params": "{\"url\": \"https://api.coingecko.com/api/v3\", \"coin\": \"litecoin\", \"periodSeconds\": 60}"
+          "fiat_rates_params": "{\"url\": \"https://api.coingecko.com/api/v3\", \"coin\": \"tether\", \"periodSeconds\": 60}"
         }
       }
     },
