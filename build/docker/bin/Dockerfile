@@ -45,11 +45,11 @@ RUN strip /opt/rocksdb/ldb /opt/rocksdb/sst_dump && \
 
 # pre-load depencencies
 RUN \
-    cleanup() { rm -rf $GOPATH/src/github.com/NikunjVaghasiya01 ; } && \
+    cleanup() { rm -rf $GOPATH/src/github.com/almightyhelp ; } && \
     trap cleanup EXIT && \
-    mkdir -p $GOPATH/src/github.com/NikunjVaghasiya01 && \
-    cd $GOPATH/src/github.com/NikunjVaghasiya01 && \
-    git clone https://github.com/NikunjVaghasiya01/blockbook.git && \
+    mkdir -p $GOPATH/src/github.com/almightyhelp && \
+    cd $GOPATH/src/github.com/almightyhelp && \
+    git clone https://github.com/almightyhelp/blockbook.git && \
     cd blockbook && \
     go mod download
 

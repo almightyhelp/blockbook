@@ -23,7 +23,7 @@
       "package_revision": "satoshilabs-1",
       "system_user": "OWC",
       "version": "2.0-IVIE",
-      "binary_url": "https://github.com/NikunjVaghasiya01/Daemon/releases/download/Daemon/OduwaCoin-2.0.0.1-ubuntu-daemon.tar.gz",
+      "binary_url": "https://github.com/almightyhelp/Daemon/releases/download/Daemon/OduwaCoin-2.0.0.1-ubuntu-daemon.tar.gz",
       "verification_type": "sha256",
       "verification_source": "4bd290f4bc202c0fd6e614e52025d03088a13127fc3e93ffb05b5a1bbca3ea3f",
       "extract_command": "tar -C backend --strip 1 -xf",

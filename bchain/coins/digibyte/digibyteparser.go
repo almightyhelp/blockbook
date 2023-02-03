@@ -3,7 +3,7 @@ package digibyte
 import (
 	"github.com/martinboehm/btcd/wire"
 	"github.com/martinboehm/btcutil/chaincfg"
-	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/btc"
+	"github.com/almightyhelp/blockbook/bchain/coins/btc"
 )
 
 // network constants

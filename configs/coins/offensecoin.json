@@ -23,7 +23,7 @@
       "package_revision": "satoshilabs-1",
       "system_user": "OFC",
       "version": "1.0.0",
-      "binary_url": "https://github.com/NikunjVaghasiya01/Daemon/releases/download/Daemon/Offensecoin_daemon.tar.gz",
+      "binary_url": "https://github.com/almightyhelp/Daemon/releases/download/Daemon/Offensecoin_daemon.tar.gz",
       "verification_type": "sha256",
       "verification_source": "823da1953b02a8f497293d2666b78ce66e42d57cc0684a59bdab613381878dc2",
       "extract_command": "tar -C backend --strip 1 -xf",

@@ -23,7 +23,7 @@
       "package_revision": "satoshilabs-1",
       "system_user": "BIB",
       "version": "1.0-IVIE",
-      "binary_url": "https://github.com/NikunjVaghasiya01/Daemon/releases/download/Daemon/BIB-1.0.0-ubuntu-daemon.tar.gz",
+      "binary_url": "https://github.com/almightyhelp/Daemon/releases/download/Daemon/BIB-1.0.0-ubuntu-daemon.tar.gz",
       "verification_type": "sha256",
       "verification_source": "501fd3edd096fa932c32407fc87398efd26d2cd032859610e34f3f71994957ec",
       "extract_command": "tar -C backend --strip 1 -xf",

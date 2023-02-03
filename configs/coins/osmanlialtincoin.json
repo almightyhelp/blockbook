@@ -23,7 +23,7 @@
       "package_revision": "satoshilabs-1",
       "system_user": "osmanlialtincoin",
       "version": "1.0.0",
-      "binary_url": "https://github.com/NikunjVaghasiya01/Daemon/releases/download/Daemon/osmanlialtincoin.tar.gz",
+      "binary_url": "https://github.com/almightyhelp/Daemon/releases/download/Daemon/osmanlialtincoin.tar.gz",
       "verification_type": "sha256",
       "verification_source": "f2d092ab0f75f22db979fbe62cdc8af716a9d6f6da9d79e2baa1ca5611dbc283",
       "extract_command": "tar -C backend --strip 1 -xf",

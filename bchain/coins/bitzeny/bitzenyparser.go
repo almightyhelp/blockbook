@@ -1,7 +1,7 @@
 package bitzeny
 
 import (
-	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/btc"
+	"github.com/almightyhelp/blockbook/bchain/coins/btc"
 
 	"github.com/martinboehm/btcd/wire"
 	"github.com/martinboehm/btcutil/chaincfg"

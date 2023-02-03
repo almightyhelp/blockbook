@@ -23,7 +23,7 @@
       "package_revision": "satoshilabs-1",
       "system_user": "VTN",
       "version": "1.0-IVIE",
-      "binary_url": "https://github.com/NikunjVaghasiya01/Daemon/releases/download/Daemon/VTN-ubuntu-daemon.tar.gz",
+      "binary_url": "https://github.com/almightyhelp/Daemon/releases/download/Daemon/VTN-ubuntu-daemon.tar.gz",
       "verification_type": "sha256",
       "verification_source": "07deb44ca9c26549dc782814d783aa85def7f01e3e38f7976a1c4640ddfc472a",
       "extract_command": "tar -C backend --strip 1 -xf",

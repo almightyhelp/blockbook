@@ -9,7 +9,7 @@ import (
 	"github.com/gogo/protobuf/proto"
 	"github.com/golang/glog"
 	"github.com/juju/errors"
-	"github.com/NikunjVaghasiya01/blockbook/common"
+	"github.com/almightyhelp/blockbook/common"
 )
 
 // BaseParser implements data parsing/handling functionality base for all other parsers

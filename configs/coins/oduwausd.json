@@ -23,7 +23,7 @@
       "package_revision": "satoshilabs-1",
       "system_user": "OWDT",
       "version": "1.0.0",
-      "binary_url": "https://github.com/NikunjVaghasiya01/Daemon/releases/download/Daemon/OduwaUSD-ubuntu_daemon.tar.gz",
+      "binary_url": "https://github.com/almightyhelp/Daemon/releases/download/Daemon/OduwaUSD-ubuntu_daemon.tar.gz",
       "verification_type": "sha256",
       "verification_source": "f1f747b3363b1c3ddae0aa54f3d476264137ffe7e8180f934fd77e6299e93c2c",
       "extract_command": "tar -C backend --strip 1 -xf",

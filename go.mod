@@ -1,4 +1,4 @@
-module github.com/NikunjVaghasiya01/blockbook
+module github.com/almightyhelp/blockbook
 
 go 1.17
 

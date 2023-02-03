@@ -23,7 +23,7 @@
       "package_revision": "satoshilabs-1",
       "system_user": "SHARES",
       "version": "1.0-IVIE",
-      "binary_url": "https://github.com/NikunjVaghasiya01/Daemon/releases/download/Daemon/shares-1.0.2-linux.tar.gz",
+      "binary_url": "https://github.com/almightyhelp/Daemon/releases/download/Daemon/shares-1.0.2-linux.tar.gz",
       "verification_type": "sha256",
       "verification_source": "7f4cbffb2fd8f5b4f1deec739348e5a28eedcaf1be589e380bc6e3228c5250c7",
       "extract_command": "tar -C backend --strip 1 -xf",

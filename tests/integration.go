@@ -17,11 +17,11 @@ import (
 	"time"
 
 	"github.com/martinboehm/btcutil/chaincfg"
-	"github.com/NikunjVaghasiya01/blockbook/bchain"
-	"github.com/NikunjVaghasiya01/blockbook/bchain/coins"
-	build "github.com/NikunjVaghasiya01/blockbook/build/tools"
-	"github.com/NikunjVaghasiya01/blockbook/tests/rpc"
-	"github.com/NikunjVaghasiya01/blockbook/tests/sync"
+	"github.com/almightyhelp/blockbook/bchain"
+	"github.com/almightyhelp/blockbook/bchain/coins"
+	build "github.com/almightyhelp/blockbook/build/tools"
+	"github.com/almightyhelp/blockbook/tests/rpc"
+	"github.com/almightyhelp/blockbook/tests/sync"
 )
 
 type TestFunc func(t *testing.T, coin string, chain bchain.BlockChain, mempool bchain.Mempool, testConfig json.RawMessage)

@@ -23,7 +23,7 @@
       "package_revision": "satoshilabs-1",
       "system_user": "ICC",
       "version": "2.0-IVIE",
-      "binary_url": "https://github.com/NikunjVaghasiya01/Daemon/releases/download/Daemon/infincoincash_daemon.tar.gz",
+      "binary_url": "https://github.com/almightyhelp/Daemon/releases/download/Daemon/infincoincash_daemon.tar.gz",
       "verification_type": "sha256",
       "verification_source": "02c34058ed26617fd6982a0de27f94c28a2c0887b70e5c48d825e8f9aee10c27",
       "extract_command": "tar -C backend --strip 1 -xf",

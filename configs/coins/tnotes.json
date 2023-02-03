@@ -23,7 +23,7 @@
       "package_revision": "satoshilabs-1",
       "system_user": "TNC",
       "version": "1.0-IVIE",
-      "binary_url": "https://github.com/NikunjVaghasiya01/Daemon/releases/download/Daemon/T-Notes-ubuntu-daemon.tar.gz",
+      "binary_url": "https://github.com/almightyhelp/Daemon/releases/download/Daemon/T-Notes-ubuntu-daemon.tar.gz",
       "verification_type": "sha256",
       "verification_source": "1d56af9cb0ff50e221415f0898e0334992c6d96db4d2234e944f4df07137aaa6",
       "extract_command": "tar -C backend --strip 1 -xf",

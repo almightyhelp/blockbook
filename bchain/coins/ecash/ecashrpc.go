@@ -8,8 +8,8 @@ import (
 	"github.com/golang/glog"
 	"github.com/juju/errors"
 	"github.com/pirk/ecashutil"
-	"github.com/NikunjVaghasiya01/blockbook/bchain"
-	"github.com/NikunjVaghasiya01/blockbook/bchain/coins/btc"
+	"github.com/almightyhelp/blockbook/bchain"
+	"github.com/almightyhelp/blockbook/bchain/coins/btc"
 )
 
 // ECashRPC is an interface to JSON-RPC bitcoind service.

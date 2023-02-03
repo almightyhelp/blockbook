@@ -3,7 +3,7 @@ package dbtestdata
 import (
 	"encoding/hex"
 
-	"github.com/NikunjVaghasiya01/blockbook/bchain"
+	"github.com/almightyhelp/blockbook/bchain"
 )
 
 // Addresses

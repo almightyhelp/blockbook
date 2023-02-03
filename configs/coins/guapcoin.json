@@ -23,7 +23,7 @@
       "package_revision": "satoshilabs-1",
       "system_user": "guap",
       "version": "2.3.1",
-      "binary_url": "https://github.com/NikunjVaghasiya01/Daemon/releases/download/Daemon/Guapcoin-2.3.2-Ubuntu-daemon.tar.gz",
+      "binary_url": "https://github.com/almightyhelp/Daemon/releases/download/Daemon/Guapcoin-2.3.2-Ubuntu-daemon.tar.gz",
       "verification_type": "sha256",
       "verification_source": "a1284e85454251a81edf079249bc66fbab98a1705a4ec8b419d2b7ca4fbb808a",
       "extract_command": "tar -C backend --strip 1 -xf",
