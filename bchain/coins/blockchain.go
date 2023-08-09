@@ -87,6 +87,7 @@ func init() {
 	BlockChainFactories["Bgold"] = btg.NewBGoldRPC
 	BlockChainFactories["Bgold Testnet"] = btg.NewBGoldRPC
 	BlockChainFactories["Dash"] = dash.NewDashRPC
+	BlockChainFactories["Blocx"] = blocx.NewBlocxRPC
 	BlockChainFactories["Dash Testnet"] = dash.NewDashRPC
 	BlockChainFactories["Decred"] = dcr.NewDecredRPC
 	BlockChainFactories["Decred Testnet"] = dcr.NewDecredRPC
