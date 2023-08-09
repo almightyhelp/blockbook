@@ -19,6 +19,7 @@ import (
 	"github.com/almightyhelp/blockbook/bchain/coins/btg"
 	"github.com/almightyhelp/blockbook/bchain/coins/cpuchain"
 	"github.com/almightyhelp/blockbook/bchain/coins/dash"
+	"github.com/almightyhelp/blockbook/bchain/coins/blocx"
 	"github.com/almightyhelp/blockbook/bchain/coins/dcr"
 	"github.com/almightyhelp/blockbook/bchain/coins/deeponion"
 	"github.com/almightyhelp/blockbook/bchain/coins/digibyte"
