@@ -32,6 +32,7 @@ import (
 	"github.com/almightyhelp/blockbook/bchain/coins/fujicoin"
 	"github.com/almightyhelp/blockbook/bchain/coins/gamecredits"
 	"github.com/almightyhelp/blockbook/bchain/coins/grs"
+	"github.com/almightyhelp/blockbook/bchain/coins/islamicdigitalcoin"
 	"github.com/almightyhelp/blockbook/bchain/coins/koto"
 	"github.com/almightyhelp/blockbook/bchain/coins/liquid"
 	"github.com/almightyhelp/blockbook/bchain/coins/litecoin"
@@ -93,6 +94,7 @@ func init() {
 	BlockChainFactories["Decred"] = dcr.NewDecredRPC
 	BlockChainFactories["Decred Testnet"] = dcr.NewDecredRPC
 	BlockChainFactories["GameCredits"] = gamecredits.NewGameCreditsRPC
+	BlockChainFactories["Islamicdigitalcoin"] = islamicdigitalcoin.NewIslamicdigitalcoinRPC
 	BlockChainFactories["Koto"] = koto.NewKotoRPC
 	BlockChainFactories["Koto Testnet"] = koto.NewKotoRPC
 	BlockChainFactories["Litecoin"] = litecoin.NewLitecoinRPC
