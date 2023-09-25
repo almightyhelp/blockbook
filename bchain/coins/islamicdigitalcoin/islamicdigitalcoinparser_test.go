@@ -1,5 +1,5 @@
 // +build unittest
 
-package islamicdigitalcoincoin
+package islamicdigitalcoin
 
 

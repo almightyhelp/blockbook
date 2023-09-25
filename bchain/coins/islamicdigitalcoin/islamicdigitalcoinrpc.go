@@ -32,8 +32,8 @@ type ResGetBlockChainInfo struct {
 	} `json:"result"`
 }
 
-// NewislamicdigitalcoinRPC returns new islamicdigitalcoinRPC instance
-func NewislamicdigitalcoinRPC(config json.RawMessage, pushHandler func(bchain.NotificationType)) (bchain.BlockChain, error) {
+// NewIslamicdigitalcoinRPC returns new islamicdigitalcoinRPC instance
+func NewIslamicdigitalcoinRPC(config json.RawMessage, pushHandler func(bchain.NotificationType)) (bchain.BlockChain, error) {
 	b, err := btc.NewBitcoinRPC(config, pushHandler)
 	if err != nil {
 		return nil, err
